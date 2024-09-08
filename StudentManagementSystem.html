@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="StudentManagementSystem.css"> <!-- Link to CSS file -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <header class="header"> 
+        <h1>Student Management System</h1>
+    </header>
+    
+    <div class="logo-container">
+        <img src="https://png.pngtree.com/png-vector/20190326/ourmid/pngtree-vector-male-student-icon-png-image_864721.jpg" alt="Logo" class="logo"> 
+    </div>
+    
+    <!-- HOME -->
+    <div class="container-home" id="homeclass" style="display:block;">
+        <h1 class="form-title">Choose A Command</h1>
+        <form id="homeForm">
+            <button type="button" name="btnCheckList" class="btn-check-list">CHECK LIST</button>
+            <button type="button" name="addListStudent" class="add-list-student">ADD STUDENT</button>
+        </form>
+    </div>
+
+    <!-- Form to Add New Student -->
+    <div class="container" id="add-class" style="display:none;">
+        <h1 class="form-title">Add Student</h1>
+        <form id="addStudentForm">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="studentName" name="fullname" placeholder="Fullname" required>
+                <label for="studentName" class="fullname">Fullname</label>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="studentEmail" name="email" placeholder="Email" required>
+                <label for="studentEmail" class="email">Email</label>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-calendar-alt"></i>
+                <input type="number" id="studentAge" name="age" placeholder="Age" min="10" max="99" required>
+                <label for="studentAge" class="age">Age</label>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-book"></i>
+                <input type="text" id="studentClass" name="className" placeholder="Class" required>
+                <label for="studentClass" class="class">Class</label>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" id="submitStudentButton" class="btn">Add Student</button>
+                <button type="button" id="checklist" class="btn-check-list">Check List</button>
+            </div>
+
+            <button type="button" class="back-home-btn">Back to Home</button>
+        </form>
+    </div>
+
+    <!-- Table to Display Students -->
+    <div class="container" id="studentlist" style="display:none;">
+        <h1 class="form-title">Student List</h1>
+        <form id="studentListForm">
+            <button type="button" id="addbutton" class="add-list-student">Add Student</button>
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Class</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Student rows will be dynamically added here using jQuery -->
+                </tbody>
+            </table>
+            <button type="button" class="back-home-btn">Back to Home</button>
+        </form>
+    </div>
+
+    <script src="StudentManagementSystem.js"></script> <!-- Link to external JS file -->
+</body>
+</html>
